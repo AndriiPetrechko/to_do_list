@@ -1,0 +1,43 @@
+.Notes{
+    margin: 0 auto;
+    width: 50%;
+}
+.note_item{
+    position: relative;
+    margin: 15px auto;
+    border: 2px dashed black;
+    width: 75%;
+    padding: 10px 20px;
+    font-size: 25px;
+    background-color: #F2F5A9;
+}
+.note_delete{
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 100%;
+    background-color: #666;
+    color: #fff;
+    text-align: center;
+    line-height: 25px;
+    cursor: pointer;
+}
+.Notes_Create{
+    margin: 20px auto 0 auto;
+    border: 2px solid black;
+    width: 75%;
+    padding: 10px 20px;
+    font-size: 25px;
+    background-color: #A9F5BC;
+}
+.input_text{
+    width: 100%;
+}
+.notes_create_btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}

@@ -1,26 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import Notes from './components/Notes';
+import { Container } from 'react-bootstrap';
+import { withoutIndex } from './components/utils';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      notes: [
+        "**вигуляти собаку**",
+        "**сходити в магазин**",
+        "**заняття у спортзалі**",
+      ]
+    }
+  }
+
+  onNoteDelete = indexToRemove => {
+    this.setState(oldstate => {
+      return {
+        notes: withoutIndex(oldstate.notes, indexToRemove)
+      };
+    });
+  };
+
+  onNoteCreate = newNoteText => {
+    this.setState(oldstate => {
+      return {
+        notes: [newNoteText].concat(oldstate.notes)
+      };
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <Container>
+          <Notes
+            notes={this.state.notes}
+            onDelete={this.onNoteDelete}
+            onCreate={this.onNoteCreate}
+          />
+        </Container>
+      </div>
+    )
+  }
 }
-
-export default App;
