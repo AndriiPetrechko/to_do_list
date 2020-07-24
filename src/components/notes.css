@@ -1,6 +1,7 @@
 .Notes{
     margin: 0 auto;
     width: 50%;
+    min-width: 400px;
 }
 .note_item{
     position: relative;
@@ -40,4 +41,10 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+
+@media screen and (max-width:840px){
+    .Notes{
+        width: 100%;
+    }
 }
